@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByAmount } from "../src/redux/counter";
+import {  increseOne, decreseOne,incrementByAmount } from "../src/redux/counter";
 import { Adecrement, Aincrement, AincrementByAmount } from "../src/redux/assist";
-
 import {View,Text,Button,StyleSheet}from 'react-native';
 import { Center, Row } from "native-base";
 import globalStyle from "../globalStyle";
 import  {useNavigation}  from "@react-navigation/native";
+
  
 
 const Home=()=>{
@@ -18,13 +18,13 @@ const Home=()=>{
       <View style={styles.container}>
         <View style={{flexDirection:'row'  }}>
         
-            <Button onPress={() => dispatch(increment())} title='Point +' />
-            <Button onPress={() => dispatch(decrement())} title='Point -'/>
-            <Button onPress={() => dispatch(incrementByAmount(33))} title='Point + 33' />
-            <Text> The count is: {count}</Text>
+            <Button onPress={() => dispatch(increseOne()) } title='Point +' style={{fontSize:100}}/>
+            <Button onPress={() => dispatch(decreseOne())} title='Point -'/> 
+            {/* <Button onPress={() => dispatch(incrementByAmount(33))} title='Point + 33' /> */}
+            
         </View>
-
-        <View style={{flexDirection:'row'  }}>
+        <Text style={{fontSize:50}}> The count is: {count}</Text>
+        {/* <View style={{flexDirection:'row'  }}>
         
           <Button onPress={() => dispatch(Aincrement())} title='Assist +' />
           <Button onPress={() => dispatch(Adecrement())} title='Assist -'/>
@@ -33,7 +33,7 @@ const Home=()=>{
         </View>
         <View>
           <Button onPress={()=>navigation.navigate('Test')} title='go to Test'/>
-        </View>
+        </View> */}
 
         
       </View>
