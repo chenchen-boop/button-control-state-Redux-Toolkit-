@@ -1,12 +1,12 @@
 import store from './src/redux/store';
 import { Provider } from 'react-redux';
-import Home from './screens/home';
+import HomeStack from './homeStack';
 
 
 const App=()=>{
   return(
     <Provider store={store}>
-    <Home/>
+    <HomeStack/>
     </Provider>
   )
 }

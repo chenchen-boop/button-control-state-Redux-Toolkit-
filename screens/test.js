@@ -6,40 +6,35 @@ import { Adecrement, Aincrement, AincrementByAmount } from "../src/redux/assist"
 import {View,Text,Button,StyleSheet}from 'react-native';
 import { Center, Row } from "native-base";
 import globalStyle from "../globalStyle";
-import  {useNavigation}  from "@react-navigation/native";
- 
 
-const Home=()=>{
-  const navigation = useNavigation();
+const Test=()=>{
     const { count } = useSelector((state) => state.counter);
     const { assist } = useSelector((state) => state.assist);
     const dispatch = useDispatch();
     return (
       <View style={styles.container}>
+          <Text>TESTTESTTESTTEST</Text>
         <View style={{flexDirection:'row'  }}>
         
-            <Button onPress={() => dispatch(increment())} title='Point +' />
-            <Button onPress={() => dispatch(decrement())} title='Point -'/>
-            <Button onPress={() => dispatch(incrementByAmount(33))} title='Point + 33' />
-            <Text> The count is: {count}</Text>
+          <Button onPress={() => dispatch(increment())} title='Point +' />
+          <Button onPress={() => dispatch(decrement())} title='Point -'/>
+          <Button onPress={() => dispatch(incrementByAmount(33))} title='Point + 33' />
+          <Text> The count is: {count}</Text>
         </View>
 
         <View style={{flexDirection:'row'  }}>
         
-          <Button onPress={() => dispatch(Aincrement())} title='Assist +' />
-          <Button onPress={() => dispatch(Adecrement())} title='Assist -'/>
-          <Button onPress={() => dispatch(AincrementByAmount(33))} title='Assist + 33' />
-          <Text> The count is: {assist}</Text>
-        </View>
-        <View>
-          <Button onPress={()=>navigation.navigate('Test')} title='go to Test'/>
-        </View>
+        <Button onPress={() => dispatch(Aincrement())} title='Assist +' />
+        <Button onPress={() => dispatch(Adecrement())} title='Assist -'/>
+        <Button onPress={() => dispatch(AincrementByAmount(33))} title='Assist + 33' />
+        <Text> The count is: {assist}</Text>
+      </View>
 
         
       </View>
     );
 }
-export default Home;
+export default Test;
 const styles = StyleSheet.create({
     container: {
        flex:1,
